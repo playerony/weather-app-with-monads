@@ -1,6 +1,7 @@
 const { getWeatherItems } = require("./weather");
 
-const toLi = (weather) => `<li>${weather.date} ${weather.temperature}</li>`;
+const toLi = (weather) =>
+  `<li>Hour: ${weather.date}<br/>Temperature: ${weather.temperature}</li>`;
 
 const populateUI = (zip) =>
   getWeatherItems(zip).map((weathers) => weathers.map(toLi));
@@ -14,7 +15,7 @@ function app() {
     const zip = input.value.trim();
 
     populateUI(zip).fork(console.error, (html) => {
-      results.innerHTML = html;
+      results.innerHTML = html.join("");
     });
   });
 }

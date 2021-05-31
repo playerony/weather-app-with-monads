@@ -1,5 +1,6 @@
-const { Task } = require("./types");
 const { compose } = require("ramda");
+
+const { Task } = require("./types");
 const { apiKey, apiUrl } = require("../env");
 
 const makeWeatherUrl = (zip) =>
